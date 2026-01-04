@@ -1,3 +1,5 @@
 return {
-  { 'yioneko/nvim-vtsls' },
+  {
+    'yioneko/nvim-vtsls',
+  },
 }
