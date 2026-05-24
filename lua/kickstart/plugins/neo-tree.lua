@@ -1,6 +1,10 @@
 -- Neo-tree is a Neovim plugin to browse the file system
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 
+-- FIX: Prevent netrw from loading and flashing when opening a project
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local plugins = {
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim', version = vim.version.range '*' },
   'https://github.com/nvim-lua/plenary.nvim',
