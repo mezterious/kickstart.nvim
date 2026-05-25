@@ -732,6 +732,55 @@ do
         },
       },
     },
+
+    vtsls = {
+      -- Explicitly add 'vue' to filetypes
+      filetypes = {
+        'javascript',
+        'javascriptreact',
+        'javascript.jsx',
+        'typescript',
+        'typescriptreact',
+        'typescript.tsx',
+        'vue'
+      },
+      settings = {
+        vtsls = {
+          tsserver = {
+            globalPlugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = vim.fn.glob(vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server'),
+                languages = { 'vue' },
+                configNamespace = 'typescript',
+                enableForWorkspaceTypeScriptVersions = true,
+              },
+            },
+          },
+        },
+        typescript = {
+          updateImportsOnFileMove = { enabled = 'always' },
+          suggest = {
+            completeFunctionCalls = true,
+          },
+          inlayHints = {
+            enumMemberValues = { enabled = true },
+            functionLikeReturnTypes = { enabled = true },
+            parameterNames = { enabled = 'literals' },
+            parameterTypes = { enabled = true },
+            variableTypes = { enabled = true },
+          },
+        },
+      },
+    },
+
+    vue_ls = {
+      init_options = {
+        vue = {
+          hybridMode = true,
+        },
+      },
+    },
   }
 
   vim.pack.add {
